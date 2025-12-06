@@ -9,24 +9,7 @@ export const appRouter = createTRPCRouter({
       };
   }),
   createUser: baseProcedure.mutation(async ({ctx}) => {
-    const user = await prisma.user.create({
-      data: {
-        name: "New User",
-        email: "newuser@example.com",
-        posts: {
-          create: {
-            title: "Hello World",
-            content: "This is my first post",
-            published: true,
-          }
-        }
-      },
-      include: {
-        posts: true,
-      }
-    });
-
-    return user;
+  
 
   })
 
